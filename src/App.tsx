@@ -10,6 +10,7 @@ function App() {
       <Navbar />
       <Slider />
       <Courses />
+      <h1>HELLO THIS CODE IS TO TEST</h1>
     </div>
   );
 }
