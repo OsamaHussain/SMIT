@@ -1,38 +1,42 @@
-import { Button } from '@mui/material';
-// import logo from '../images/logo.png';
-import React from 'react'
-import { Box } from '@mui/system';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import { AppBar, Button, IconButton, Menu, MenuItem, Stack, Toolbar, Typography, styled } from "@mui/material";
+import React, { useState } from "react";
+import { Box } from "@mui/system";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import { Link } from "react-router-dom";
+import MenuIcon from '@mui/icons-material/Menu'
+
+const navItems = ['Home', 'About', 'Contact'];
 
 function Navbar() {
-    const [value, setValue] = React.useState(0);
-
-    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-        setValue(newValue);
-    };
-
     return (
-        <div className='navbar'>
-            {/* Saylani LOOG */}
-            <img  id="Image" src="/static/images/logo.png" alt="Saylani"  width={'200px'} height={'50px'}/>
-
-            {/* Navigation Menu */}
-            <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
-                <Tabs value={value} onChange={handleChange} centered>
-                <Tab label="Home" />
-                <Tab label="About" />
-                <Tab label="Service" />
-                <Tab label="Media" />
-                <Tab label="News" />
-                <Tab label="Contact us" />
-                </Tabs>
-            </Box>
-
-            {/* Apply Button */}
-            <Button variant="contained" color="primary" sx={{width:150}}>Apply Now</Button>
-        </div>
-    )
+      <AppBar component="nav" position="sticky">
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            sx={{ mr: 2, display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            MUI
+          </Typography>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            {navItems.map((item) => (
+              <Button key={item} sx={{ color: '#fff' }}>
+                {item}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </AppBar>
+    );
 }
 
 export default Navbar;
