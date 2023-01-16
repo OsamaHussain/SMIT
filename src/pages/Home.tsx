@@ -8,11 +8,11 @@ const Home = () => {
   return (
     <div>
       <Slider />
-      <CPost posts={3} data={courses} title="Courses" className="blk_typo course-main-page"/>
+      <CPost posts={3} data={courses} title="Courses" className="blk_typo course-main-page" btm={false} />
       <News end={4} data={news} title="News" id="news" className="news blk_typo"/>
       <News start={4} end={8} data={news}/>
     </div>
   )
 }
 
-export default Home
+export default Home;

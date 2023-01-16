@@ -5,16 +5,22 @@
 }
 
 .navbar {
-  display: flex;
-  align-items: center;
-  padding: 10px 30px;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* padding: 10px 30px; */
   box-shadow: 0px 1px 25px rgb(152, 150, 150);
   /* background-color: #f0f0f0; */
-  background-color: rgba(0,0,0,0.92);
+  background-color: rgba(0,0,0,0.90) !important;
   color: white;
+  padding: 5px 0;
 }
 .navbar * {
   color: white;
+}
+
+.navbar .links {
+  text-decoration: none !important;
 }
 
 .slider {
@@ -24,8 +30,11 @@
 
 .blk_typo {
   background-color: rgba(0,0,0,.92);
-  padding: 20px;
+  /* background-color: #E3E3E3; */
+  /* padding: 20px; */
+  padding: 10px 0;
   color: white;
+  /* color: rgba(0,0,0,.7); */
   font-weight: 900;
   text-align: center;
 }
@@ -60,4 +69,26 @@
 }
 .course-main-page {
   margin-top:0 !important;
+}
+
+.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 30px;
+}
+.about-hero::before{
+    background-image: url('https://www.saylaniwelfare.com/static/media/page_header.ee6c9895d66d7d7cce3a.png');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: " ";
+    display: block;
+    height: 100%;
+    opacity: .1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
 }
